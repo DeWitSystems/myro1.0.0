@@ -1,2 +1,2 @@
-Basic WordPress starter team based on 'underscores'.
+Basic WordPress starter theme based on 'underscores'.
 
