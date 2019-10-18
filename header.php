@@ -61,10 +61,12 @@
 		'depth'		=> 2,
 		'fallback_cb'	=>'bs4navwalker::fallback',
 		'walker'		=> new bs4navwalker()
-	
+
 	]);
 ?>
 </nav>
+
+<?php the_custom_header_markup(); ?> 
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content row">
