@@ -109,32 +109,32 @@ add_action( 'after_setup_theme', 'myro_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function myro_scripts() {
-	wp_enqueue_style('myro-bs-css' , get_template_directory_uri() . 
+	wp_enqueue_style('myro-bs-css' , get_template_directory_uri() .
 	'/dist/css/bootstrap.min.css');
-	
-	wp_enqueue_style('myro-fontawesome' , get_template_directory_uri() . 
+
+	wp_enqueue_style('myro-fontawesome' , get_template_directory_uri() .
 	'/fonts/font-awesome/css/font-awesome.min.css' );
-	
+
 	wp_enqueue_style( 'myro-style', get_stylesheet_uri() );
 
-	wp_register_script('popper', 
+	wp_register_script('popper',
 	'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js', false, '', true);
 
 	wp_enqueue_script('popper');
 
-	wp_enqueue_script( 'myro-tether', get_template_directory_uri() . 
+	wp_enqueue_script( 'myro-tether', get_template_directory_uri() .
 	'/src/js/tether.min.js', array(), '20170115', true );
 
-	wp_enqueue_script( 'myro-bootstrap', get_template_directory_uri() . 
+	wp_enqueue_script( 'myro-bootstrap', get_template_directory_uri() .
 	'/src/js/bootstrap.min.js', array('jquery'), '20170195', true );
 
-	wp_enqueue_script( 'myro-bootstrap-hover', get_template_directory_uri() . 
+	wp_enqueue_script( 'myro-bootstrap-hover', get_template_directory_uri() .
 	'/src/js/bootstrap-hover.js', array('jquery'), '20170115', true );
 
-	wp_enqueue_script( 'myro-nav-scroll', get_template_directory_uri() . 
+	wp_enqueue_script( 'myro-nav-scroll', get_template_directory_uri() .
 	'/src/js/nav-scroll.js', array('jquery'), '20170195', true );
 
-	wp_enqueue_script( 'myro-skip-link-focus-fix', get_template_directory_uri() . 
+	wp_enqueue_script( 'myro-skip-link-focus-fix', get_template_directory_uri() .
 	'/src/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -142,6 +142,14 @@ function myro_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'myro_scripts' );
+
+function myro_header_video_dequeue_script() {
+	wp_dequeue_script( 'wp-custom-header' );
+	wp_deregister_script( 'wp-custom-header' );
+	wp_enqueue_script('wp-custom-header' , get_template_directory_uri() .
+	'/dist/js/wp-custom-header.js', array(), '', 'true');
+}
+add_action( 'wp_print_scripts', 'myro_header_video_dequeue_script', 100);
 
 /**
  * Implement the Custom Header feature.
