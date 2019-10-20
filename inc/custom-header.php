@@ -20,9 +20,10 @@ function myro_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'myro_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
+		'width'                  => 1140,
+		'height'                 => 641,
 		'flex-height'            => true,
+		'video'									=> true,
 		'wp-head-callback'       => 'myro_header_style',
 	) ) );
 }
