@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Full Width Page
+ * Template Name: Portfolio Page
  *
- * This is the template that displays without sidebars
+ * This is the template that displays Portfolio without sidebars
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
