@@ -112,6 +112,9 @@ function myro_scripts() {
 	wp_enqueue_style('myro-bs-css' , get_template_directory_uri() .
 	'/dist/css/bootstrap.min.css');
 
+	wp_enqueue_style('myro-bs-css' , get_template_directory_uri() .
+	'/dist/css/bootstrap.css');
+
 	wp_enqueue_style('myro-fontawesome' , get_template_directory_uri() .
 	'/fonts/font-awesome/css/font-awesome.min.css' );
 
